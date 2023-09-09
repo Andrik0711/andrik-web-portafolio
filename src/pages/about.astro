@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Andrik ">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="Sobre mi"
+				tagline="Soy un desarrollador con poca experiencia, pero con muchas ganas de aprender y mejorar."
+			>
+			<div class="content_profile">
+				<img
+					width="1553"
+					height="873"
+					src="/assets/andrik.jpg"
+					alt="Andrik Rodríguez"
+				/>
+			</div>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Información</h2>
+				<div class="content">
+					<p>
+						Actualmente estoy estudiando en la Universidad Politécnica de Victoriaa, 
+						en la carrera de Ingeniería en Tenologias de la Información. 
+						Desde que empecé la carrera me ha gustado mucho el desarrollo web, 
+						y es por eso que me he enfocado en aprender más sobre este tema. 
+						Me gusta aprender cosas nueva y por ello cuento con certificaciones tanto diseño UX/UI como networking.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Estudios</h2>
+				<div class="content">
+					<p>Ingenieria en Tecnologías de la Información. (En curso)</p>
+					<p>Técnico en programción. (Terminada)</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Habilidades</h2>
+				<div class="content">
+					<p>Trabajo en equipo</p>
+					<p>Comunicación Efectiva</p>
+					<p>Disciplina</p>
+					<p>Autodidacta</p>
+					<p>Adaptabilidad</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Tecnologias</h2>
+				<div class="content">
+					<p>HTML (Intermedio)</p>
+					<p>CSS (Intermedio)</p>
+					<p>Tailwind (Intermedio)</p>
+					<p>Boostrap (Principiante)</p>
+					<p>Laravel (Intermedio)</p>
+					<p>Vue JS (Principiante)</p>
+					<p>Astro (Principiante)</p>
+					<p>Python (Intermedio)</p>
+					<p>C# (Intermedio)</p>
+					<p>JavaScript (Principiante)</p>
+					<p>SQL (Principiante)</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	.content_profile{
+		display: flex;
+		justify-content: center;
+	}
+
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		height: 100%;
+		width: 60%;
+		
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
